@@ -31,6 +31,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HeaderComponent } from './components/header/header.component';
     NavComponent,
     HomeComponent,
     HeaderComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
