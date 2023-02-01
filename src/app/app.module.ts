@@ -32,6 +32,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     HomeComponent,
     HeaderComponent,
     UserListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,11 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     MatIconModule,
     MatListModule,
     MatCardModule,
+    ToastrModule.forRoot({
+    timeOut: 10000,
+    positionClass: 'toast-bottom-right',
+    preventDuplicates: true,
+    })
   ],
   bootstrap: [AppComponent]
 })
