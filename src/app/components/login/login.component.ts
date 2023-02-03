@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Credentials } from 'src/app/models/credentials';
-import { AuthService } from 'src/app/services/aut.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.service.authenticate(this.creds).subscribe(resposta => {
-      this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
+
+      const jsonToken = JSON.parse(JSON.stringify(resposta.body));
+      this.service.successfulLogin(jsonToken);
       this.router.navigate([''])
     }, () => {
       this.toast.error('Usuário e/ou senha inválidos');
