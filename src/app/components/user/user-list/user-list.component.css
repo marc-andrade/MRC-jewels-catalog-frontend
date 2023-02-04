@@ -1,5 +1,6 @@
 .container {
-    width: 90%;
+    width: 80%;
+    padding-bottom: 25px;
     margin: auto;
 }
 
@@ -7,3 +8,24 @@ table {
     width: 100%;
   }
   
+  mat-form-field {
+    width: 100%;
+ }
+
+ button {
+    width: 100%;
+ }
+ 
+ h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+ }
+ 
+ .edit {
+    color: rgb(0, 153, 255);
+ }
+ 
+ .delete {
+    color: red;
+ }
