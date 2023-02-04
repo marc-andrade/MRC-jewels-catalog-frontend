@@ -34,6 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ToastrModule } from 'ngx-toastr';
     preventDuplicates: true,
     })
   ],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

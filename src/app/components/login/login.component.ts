@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.service.authenticate(this.creds).subscribe(resposta => {
+    this.service.authenticate(this.creds).subscribe((resposta:any) => {
 
-      const jsonToken = JSON.parse(JSON.stringify(resposta.body));
+      const token = resposta.token;
       
-      this.service.successfulLogin(jsonToken);
+      this.service.successfulLogin(token);
       this.router.navigate([''])
     }, () => {
       this.toast.error('Usuário e/ou senha inválidos');
