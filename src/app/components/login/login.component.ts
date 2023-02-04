@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     this.service.authenticate(this.creds).subscribe(resposta => {
 
       const jsonToken = JSON.parse(JSON.stringify(resposta.body));
+      
       this.service.successfulLogin(jsonToken);
       this.router.navigate([''])
     }, () => {
