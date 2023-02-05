@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 const routes: Routes = [
 
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path: 'home', component: HomeComponent},
 
     {path: 'users', component: UserListComponent},
-    {path: 'users/create', component: UserCreateComponent}
+    {path: 'users/create', component: UserCreateComponent},
+    {path: 'users/update/:id', component: UserUpdateComponent}
   ]
   }
 ];

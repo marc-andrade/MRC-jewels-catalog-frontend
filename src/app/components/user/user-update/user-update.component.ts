@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Role } from 'src/app/models/role';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-user-create',
-  templateUrl: './user-create.component.html',
-  styleUrls: ['./user-create.component.css']
+  selector: 'app-user-update',
+  templateUrl: './user-update.component.html',
+  styleUrls: ['./user-update.component.css']
 })
-export class UserCreateComponent implements OnInit {
+export class UserUpdateComponent implements OnInit {
 
+ 
   user: User = {
     id: '',
     name: '',
@@ -28,15 +29,24 @@ export class UserCreateComponent implements OnInit {
 
   constructor(private service: UserService,
     private toast: ToastrService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.user.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
   }
 
+  findById(): void {
+    this.service.findById(this.user.id).subscribe(resposta => {
+      resposta.roles = [];
+      this.user = resposta;
+    });
+  }
   
-  create(): void {
-    this.service.create(this.user).subscribe(() => {
-      this.toast.success('Usuário cadastrado com sucesso', 'Cadastro');
+  update(): void {
+    this.service.update(this.user).subscribe(() => {
+      this.toast.success('Usuário atualizado com sucesso', 'Update');
       this.router.navigate(['users'])
     }, ex => {
       if(ex.error.errors) {
@@ -66,5 +76,6 @@ export class UserCreateComponent implements OnInit {
     && this.email.valid 
     && this.password.valid
   }
+
 
 }
