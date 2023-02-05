@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Role } from 'src/app/models/role';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,7 +12,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  ELEMENT_DATA: User[] = []
+  ELEMENT_DATA: User[] = [];
+
+  roleNames = {
+    1: 'Administrador',
+    2: 'Usuário',
+  };
 
   displayedColumns: string[] = ['id', 'nome', 'email','perfil','acoes'];
   dataSource = new MatTableDataSource<User>(this.ELEMENT_DATA);
@@ -26,7 +32,7 @@ export class UserListComponent implements OnInit {
 
   findAll() {
     this.service.findAll().subscribe(resposta => {
-      this.ELEMENT_DATA = resposta
+      this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<User>(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.paginator = this.paginator;
@@ -41,6 +47,10 @@ export class UserListComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-}
+  getRoleName(roleId: number) {
+    return this.roleNames[roleId];
+  }
 
+
+}
 
