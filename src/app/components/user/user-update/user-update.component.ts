@@ -13,7 +13,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserUpdateComponent implements OnInit {
 
- 
   user: User = {
     id: '',
     name: '',
@@ -76,6 +75,4 @@ export class UserUpdateComponent implements OnInit {
     && this.email.valid 
     && this.password.valid
   }
-
-
 }

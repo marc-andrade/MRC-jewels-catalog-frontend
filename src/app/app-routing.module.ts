@@ -10,20 +10,17 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 const routes: Routes = [
-
+  
   {path: 'login', component: LoginComponent},
-
-  { path: '', component: NavComponent, canActivate: [AuthGuard], children: [
-    {path: 'home', component: HomeComponent},
-
-    {path: 'users', component: UserListComponent},
-    {path: 'users/create', component: UserCreateComponent},
-    {path: 'users/update/:id', component: UserUpdateComponent},
-    {path: 'users/delete/:id', component: UserDeleteComponent}
+  { path: '', component: NavComponent, children: [
+  {path: 'home', component: HomeComponent},
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  {path: 'users/create', component: UserCreateComponent, canActivate: [AuthGuard] },
+  {path: 'users/update/:id', component: UserUpdateComponent, canActivate: [AuthGuard] },
+  {path: 'users/delete/:id', component: UserDeleteComponent, canActivate: [AuthGuard] }
   ]
   }
-];
-
+  ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
