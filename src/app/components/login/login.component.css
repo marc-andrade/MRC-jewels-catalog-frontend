@@ -42,6 +42,15 @@ mat-label,::-webkit-input-placeholder,.btn,input{
    
 }
 
+input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0 30px rgb(31, 23, 23) inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+   -webkit-text-fill-color: rgb(90, 237, 131) !important;
+}
+
 .btn{
    border: 1px solid rgb(90, 237, 131);
 }

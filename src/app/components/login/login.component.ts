@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       const token = resposta.token;
       
       this.service.successfulLogin(token);
-      this.router.navigate([''])
+      this.router.navigate(['home'])
     }, () => {
       this.toast.error('Usuário e/ou senha inválidos');
     })
