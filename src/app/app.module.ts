@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 // Componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
@@ -52,6 +53,7 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
     UserDeleteComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -79,7 +81,7 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
     timeOut: 10000,
     positionClass: 'toast-bottom-right',
     preventDuplicates: true,
-    })
+    }),
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
