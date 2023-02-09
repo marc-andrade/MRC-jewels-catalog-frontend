@@ -1,0 +1,24 @@
+
+.jewels-card-container{
+    display: flex;
+    margin: 20px;
+    
+}
+
+mat-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;  
+    margin: 20px;
+   
+}
+
+mat-card-container{
+    text-align: left;
+}
+
+  img{
+    width: auto;
+    height: 85px;
+  }

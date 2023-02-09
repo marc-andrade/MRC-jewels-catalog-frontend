@@ -39,6 +39,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
     UserCreateComponent,
     UserUpdateComponent,
     UserDeleteComponent,
+    JewelCardComponent,
   ],
   imports: [
     CommonModule,
