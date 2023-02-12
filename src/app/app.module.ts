@@ -40,6 +40,9 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.component';
+import { JewelListComponent } from './components/jewel/jewel-list/jewel-list.component';
+import { JewelCreateComponent } from './components/jewel/jewel-create/jewel-create.component';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.com
     UserUpdateComponent,
     UserDeleteComponent,
     JewelCardComponent,
+    JewelListComponent,
+    JewelCreateComponent,
   ],
   imports: [
     CommonModule,

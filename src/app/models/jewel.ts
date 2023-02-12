@@ -1,14 +1,14 @@
-import { Category } from "./category";
+import { CategoryDTO } from "./category";
 
 export interface Jewel{
     id?: any;
     name: string;
-    imageUrl: string;
+    imgUrl: string;
     description: string;
     weight: string;
     size: string;
     price: number;
-    category: Category
+    category: CategoryDTO
 }
 
   

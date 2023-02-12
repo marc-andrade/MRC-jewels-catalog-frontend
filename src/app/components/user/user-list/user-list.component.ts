@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Role } from 'src/app/models/role';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -50,7 +49,6 @@ export class UserListComponent implements OnInit {
   getRoleName(roleId: number) {
     return this.roleNames[roleId];
   }
-
 
 }
 

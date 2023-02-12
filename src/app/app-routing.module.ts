@@ -9,17 +9,21 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.component';
+import { JewelListComponent } from './components/jewel/jewel-list/jewel-list.component';
+import { JewelCreateComponent } from './components/jewel/jewel-create/jewel-create.component';
 
 const routes: Routes = [
   
   { path: '', component: NavComponent, children: [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'jewels', component: JewelCardComponent},
+  {path: 'catalog', component: JewelCardComponent},
   {path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
   {path: 'users/create', component: UserCreateComponent, canActivate: [AuthGuard] },
   {path: 'users/update/:id', component: UserUpdateComponent, canActivate: [AuthGuard] },
-  {path: 'users/delete/:id', component: UserDeleteComponent, canActivate: [AuthGuard] }
+  {path: 'users/delete/:id', component: UserDeleteComponent, canActivate: [AuthGuard] },
+  {path: 'jewels', component: JewelListComponent, canActivate: [AuthGuard] },
+  {path: 'jewels/create', component: JewelCreateComponent, canActivate: [AuthGuard] },
   ]
   }
   ];
