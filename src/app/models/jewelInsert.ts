@@ -1,6 +1,5 @@
-import { CategoryDTO } from "./category";
 
-export interface Jewel{
+export interface JewelInsertDTO{
     id?: any;
     name: string;
     imgUrl: string;
@@ -8,7 +7,7 @@ export interface Jewel{
     weight: number;
     size: string;
     price: number;
-    category: CategoryDTO
+    categoryId?: number
 }
 
   

@@ -11,6 +11,8 @@ import { UserUpdateComponent } from './components/user/user-update/user-update.c
 import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.component';
 import { JewelListComponent } from './components/jewel/jewel-list/jewel-list.component';
 import { JewelCreateComponent } from './components/jewel/jewel-create/jewel-create.component';
+import { JewelUpdateComponent } from './components/jewel/jewel-update/jewel-update.component';
+import { JewelDeleteComponent } from './components/jewel/jewel-delete/jewel-delete.component';
 
 const routes: Routes = [
   
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: 'users/delete/:id', component: UserDeleteComponent, canActivate: [AuthGuard] },
   {path: 'jewels', component: JewelListComponent, canActivate: [AuthGuard] },
   {path: 'jewels/create', component: JewelCreateComponent, canActivate: [AuthGuard] },
+  {path: 'jewels/update/:id', component: JewelUpdateComponent, canActivate: [AuthGuard] },
+  {path: 'jewels/delete/:id', component: JewelDeleteComponent, canActivate: [AuthGuard] },
   ]
   }
   ];

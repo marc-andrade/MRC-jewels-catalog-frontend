@@ -42,6 +42,8 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
 import { JewelCardComponent } from './components/jewel/jewel-card/jewel-card.component';
 import { JewelListComponent } from './components/jewel/jewel-list/jewel-list.component';
 import { JewelCreateComponent } from './components/jewel/jewel-create/jewel-create.component';
+import { JewelUpdateComponent } from './components/jewel/jewel-update/jewel-update.component';
+import { JewelDeleteComponent } from './components/jewel/jewel-delete/jewel-delete.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { JewelCreateComponent } from './components/jewel/jewel-create/jewel-crea
     JewelCardComponent,
     JewelListComponent,
     JewelCreateComponent,
+    JewelUpdateComponent,
+    JewelDeleteComponent,
   ],
   imports: [
     CommonModule,

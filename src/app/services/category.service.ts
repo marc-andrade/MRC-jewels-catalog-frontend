@@ -11,8 +11,9 @@ import { Page } from '../models/Page';
 export class CategoryService {
 
   constructor(private http: HttpClient) { }
-
+  
   findAll(): Observable<Page<CategoryDTO>> {
     return this.http.get<Page<CategoryDTO>>(`${API_CONFIG.baseUrl}/categories`);
   }
+
 }

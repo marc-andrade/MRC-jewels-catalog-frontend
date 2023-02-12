@@ -53,10 +53,8 @@ export class UserCreateComponent implements OnInit {
 
     if(this.user.roles.includes(role)) {
       this.user.roles.splice(this.user.roles.indexOf(role), 1);
-      console.log(this.user.roles)
     } else {
       this.user.roles.push(role);
-      console.log(this.user.roles)
     }
     
   }
